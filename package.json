@@ -1,0 +1,18 @@
+{
+  "name": "segundoproyecto",
+  "version": "1.0.0",
+  "description": "Programa que pide una lista de nombres",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "segundo",
+    "proyecto"
+  ],
+  "author": "JorgeLuises",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
