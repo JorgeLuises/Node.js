@@ -1,0 +1,11 @@
+{
+  "name": "quintoproyecto",
+  "version": "1.0.0",
+  "description": "Creacíon de un archivo para añadir koders desde la consola y guardarlo en el discoduro del sistema",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JorgeLuises",
+  "license": "ISC"
+}
