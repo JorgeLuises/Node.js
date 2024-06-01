@@ -18,7 +18,7 @@ const schema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        match: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
+        match: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/, //Línea que ocupa una rejex para comparar los caracteres de un correo electronico
     },
     password: {
         type: String,
