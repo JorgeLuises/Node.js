@@ -1,6 +1,18 @@
+const createError = require('http-errors');
+const encrypt = require('../lib/encript');
 const Koders = require('../models/koders.model');
 
 async function create (koderData) {
+    const koderFound = await Koders.findOne({ email: koderData.email }); //Agregamos filtro con "{}"
+
+    /*Sintaxis para ocupar filtro con una condición
+      ({ $OR [{}, {}]});
+    */
+
+    if (koderFound) throw createError(409, 'Email already in use');
+
+    koderData.password = await encrypt.encrypt(koderData.password);// Encriptacion de password y asignación del valor de password
+
     const newKoder = await Koders.create(koderData);
     return newKoder;
 };

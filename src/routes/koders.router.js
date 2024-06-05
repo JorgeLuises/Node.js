@@ -1,9 +1,10 @@
 const express = require('express');
 const kodersUsecase = require('../usecases/koders.usecase');
+const auth = require('../middlewares/auth.middleware');
 
 const router = express.Router();
 
-router.get('/', async (request, response) => {
+router.get('/', auth, async (request, response) => {
     try {
         const koders = await kodersUsecase.getAll();
         
@@ -37,7 +38,7 @@ router.post('/', async (request, response) => {
     }
 });
 
-router.get('/:id', async (request, response) => {
+router.get('/:id', auth, async (request, response) => {
     try {
         const { id } = request.params;
         const koderById = await kodersUsecase.getById(id);
@@ -55,7 +56,7 @@ router.get('/:id', async (request, response) => {
     }
 });
 
-router.delete('/:id', async (request, response) => {
+router.delete('/:id', auth, async (request, response) => {
     try {
         const { id } = request.params;
         const koderDeleted = await kodersUsecase.deleteById(id);
@@ -73,7 +74,7 @@ router.delete('/:id', async (request, response) => {
     }
 });
 
-router.patch('/:id', async (request, response) => {
+router.patch('/:id', auth, async (request, response) => {
     try {
         const { id } = request.params;
         const koderUpdated = await kodersUsecase.updateById(id, request.body);
@@ -89,6 +90,6 @@ router.patch('/:id', async (request, response) => {
             error: error.message
         });
     }
-});
+}); 
 
 module.exports = router;
