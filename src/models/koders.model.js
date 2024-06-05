@@ -28,7 +28,7 @@ const schema = new mongoose.Schema({
         type: Date,
         required: false
     },
-    generation: {
+    generation: {//Creación de relacion de generación de un koder, con el modelo Generations
         type: mongoose.Schema.Types.ObjectId,
         ref: "generations"    
     },
