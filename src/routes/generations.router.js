@@ -39,7 +39,7 @@ router.get('/:id', auth, async (request, response) => {
     }
 });
 
-router.post('/', auth, async (request, response) => {
+router.post('/', async (request, response) => {
     try {
         const generationCreated = await genUsecase.createGeneretion(request.body);
 
