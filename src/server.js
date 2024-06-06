@@ -1,4 +1,5 @@
 //Creación de servidor
+const cors = require('cors');
 const express = require('express');
 
 const kodersRouter = require('./routes/koders.router');
@@ -8,6 +9,8 @@ const generationRouter = require('./routes/generations.router');
 
 const app = express();
 
+//Middlewares
+app.use(cors());
 app.use(express.json());
 
 app.use('/koders', kodersRouter);
